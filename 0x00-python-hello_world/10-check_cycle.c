@@ -20,5 +20,5 @@ int check_cycle(listint_t *list)
 		list = lista;
 		lista = lista->next;
 	}
-	return (0)
+	return (0);
 }
