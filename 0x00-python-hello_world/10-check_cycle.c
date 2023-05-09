@@ -8,17 +8,18 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *lista;
+	listint_t *lista, *listb;
 
-	if ((list) || (list->next))
+	if (!list)
 		return (0);
-	lista = list->next;
-	while (lista && lista->next && lista->next->next)
+	lista = list;
+	listb = list->next;
+	while (lista && listb && listb->next)
 	{
-		if (lista == list)
+		if (lista == listb)
 			return (1);
-		list = lista;
 		lista = lista->next;
+		listb = listb->next->next;
 	}
 	return (0);
 }
