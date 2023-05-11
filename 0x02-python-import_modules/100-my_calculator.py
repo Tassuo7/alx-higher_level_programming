@@ -5,7 +5,7 @@ if __name__ == "__main__":
 
     if (len(argv) - 1) != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit(1)
+        sys.exit(1)
     if operator == '+':
         print("{} + {} = {}".format(a, b, add(a, b)))
     elif operator == '-':
@@ -16,4 +16,4 @@ if __name__ == "__main__":
         print("{} * {} = {}".format(a, b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
-        exit(1)
+        sys.exit(1)
