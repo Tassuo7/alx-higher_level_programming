@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    if isinstance(matrix, list):
-        for line in matrix:
-            for col in line:
-                if col != line[-i]:
-                    print("{:d}".format(col), end=" ")
-                else:
-                    print("{:d}".format(col), end="")
-            print()
+    for line in matrix:
+        for col in line:
+            if col != line[-i]:
+                print("{:d}".format(col), end=" ")
+            else:
+                print("{:d}".format(col), end="")
+        print()
