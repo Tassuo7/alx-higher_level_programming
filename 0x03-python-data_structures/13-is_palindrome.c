@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <stddef.h>
 
 /**
  * is_palindrome - checks if a list is a palindrome
@@ -15,7 +16,7 @@ int is_palindrome(listint_t **head)
 
 	if (!*head || !(*head)->next)
 		return (1);
-	while (tail)
+	while (node)
 	{
 		list[vers] = node->n;
 		node = node->next;
