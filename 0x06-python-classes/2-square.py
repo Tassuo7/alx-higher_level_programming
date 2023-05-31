@@ -9,7 +9,7 @@ class Square:
         """Instantiation with optional size
         must be an integer, otherwise raise a TypeError exception """
 
-        if not instance(size, int):
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
