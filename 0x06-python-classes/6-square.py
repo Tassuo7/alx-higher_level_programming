@@ -49,9 +49,12 @@ class Square:
 
     def my_print(self):
         """Public instance method: def my_print(self)
-        that prints in stdout the square with the character #"""
+        that prints in stdout the square with the character #
+        position should be use by using space"""
         if self.__size != 0:
             for i in range(self.__size):
-                print("#" * self.__size)
+                print(" " * self._position[0] + "#" * self.__size)
+            for i in range(self.__position[1]):
+                print()
         else:
             print()
