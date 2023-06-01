@@ -21,7 +21,7 @@ class Square:
         """property setter def size(self, value)"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 
@@ -33,11 +33,9 @@ class Square:
     @position.setter
     def position(self, value):
         """property setter def position(self, value): to set it"""
-        if not isinstance(value, tuple) or len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        elif not (isinstance(value[0], int) and isinstance(value[1], int)):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        elif not (value[0] >= 0 and not value[1] >= 0):
+        if (not isinstance(value, tuple) or len(value) != 2 or 
+                not all (isinstance(n, int) for n in value) or
+                not all (n >= 0 for n in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
@@ -52,9 +50,10 @@ class Square:
         that prints in stdout the square with the character #
         position should be use by using space"""
         if self.__size != 0:
-            for i in range(self.__size):
-                print(" " * self._position[0] + "#" * self.__size)
             for i in range(self.__position[1]):
                 print()
+
+            for i in range(self.__size):
+                print(" " * self._position[0] + "#" * self.__size)
         else:
             print()
