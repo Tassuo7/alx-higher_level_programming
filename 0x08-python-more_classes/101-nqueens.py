@@ -3,7 +3,7 @@
 
 
 import sys
-if len(sys.args) is not 2:
+if len(sys.args) != 2:
     print("Usage: nqueens N")
     exit(1)
 N = sys.args[1]
