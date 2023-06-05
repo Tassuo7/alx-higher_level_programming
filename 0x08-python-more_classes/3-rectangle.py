@@ -3,7 +3,9 @@
 
 
 class Rectangle:
-    """Rectangle with private instance attributes width and height"""
+    """Rectangle with private instance attributes width and height
+    and public instance methods area and perimeter
+    and print the rectangle with the character #"""
 
     def __init__(self, width=0, height=0):
         """initialisation of instances width and height"""
@@ -39,3 +41,25 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
+
+    def area(self):
+        """define area of the rectangle"""
+        return (self.width * self.height)
+
+    def perimeter(self):
+        """define perimeter of the rectangle"""
+        if self.width == 0 or self.height == 0:
+            return 0
+        return ((2 * self.width) + (2 * self.height))
+
+    def __str__(self):
+        """returns string rectangle"""
+        rec_str = ""
+        if self.width == 0 or self.height == 0:
+            return (rec_str)
+        for row in range(self.height):
+            for column in range(self.width):
+                rec_str += "#"
+            rec_str += "\n"
+        rec_str = rec_str[:-1]
+        return (rec_str)
