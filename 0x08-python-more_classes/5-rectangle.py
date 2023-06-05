@@ -6,7 +6,8 @@ class Rectangle:
     """Rectangle with private instance attributes width and height
     and public instance methods area and perimeter
     and print the rectangle with the character #
-    and recreate a new instance with eval"""
+    and recreate a new instance with eval
+    and print msg when deleted"""
 
     def __init__(self, width=0, height=0):
         """initialisation of instances width and height"""
@@ -70,3 +71,7 @@ class Rectangle:
         to be able to recreate a new instance by using eval()"""
         rec_str = "Rectangle(%s, %s)" % (self.width, self.height)
         return (rec_str)
+
+    def __del__(self):
+        """Print the message Bye rectangle... when deleted"""
+        print("Bye rectangle...")
