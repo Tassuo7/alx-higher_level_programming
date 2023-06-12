@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""a class Square that inherits from Rectangle"""
+"""a class Square that inherits frm Rectangle"""
 
 
 Rectangle = __import__('8-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """the class Square that inherits from Rectangle
+    """the class Square that inherits frm Rectangle
     with area and description"""
 
     def __init__(self, size):
