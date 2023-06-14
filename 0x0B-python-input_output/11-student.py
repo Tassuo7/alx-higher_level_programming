@@ -15,3 +15,8 @@ class Student:
         if (type(attrs) == list and all([type(nr) == str for nr in attrs])):
             return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
         return self.__dict__
+
+    def reload_from_json(self, json):
+        """replaces all attributes of the Student instance"""
+        for k, val in json.items():
+            setattr(self, k, val)
