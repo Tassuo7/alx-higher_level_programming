@@ -81,3 +81,18 @@ class Rectangle:
         """Print the message Bye rectangle... when deleted"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if not rect_1:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not rect_2:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_2.area() > rect_1.area():
+            return (rect_2)
+        else:
+            return (rect_1)
