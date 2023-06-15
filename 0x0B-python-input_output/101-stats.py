@@ -9,6 +9,7 @@ def print_stats(size, status_code):
     for k in sorted(status_code):
         print("{}: {}".format(k, status_code[k]))
 
+
 size = 0
 status_code = {}
 poss_code = ['200', '301', '400', '401', '403', '404', '405', '500']
