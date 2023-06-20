@@ -41,7 +41,7 @@ class Base:
         t.screen.bgcolor("lightgray")
         t.pensize(5)
         t.shape("turtle")
-        #Draw rectangle
+        # Draw rectangle
         t.bgcolor("red")
         for r in list_rectangles:
             t.showturtle()
@@ -56,7 +56,7 @@ class Base:
         t.bgcolor("orange")
         for s in list_squares:
             t.showturtle()
-            t.up() 
+            t.up()
             t.goto(s.x, s.y)
             t.down()
             for _ in range(4):
@@ -64,7 +64,6 @@ class Base:
                 t.left(90)
             t.hideturtle()
         t.exitonclick()
-
 
     @classmethod
     """writes the JSON string representation of list_objs"""
