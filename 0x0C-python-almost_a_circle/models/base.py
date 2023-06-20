@@ -66,8 +66,8 @@ class Base:
         t.exitonclick()
 
     @classmethod
-    """writes the JSON string representation of list_objs"""
     def save_to_file(cls, list_objs):
+        """writes the JSON string representation of list_objs"""
         filename = cls.__name__ + ".json"
         ls = []
         with open(filename, "w") as jsfile:
