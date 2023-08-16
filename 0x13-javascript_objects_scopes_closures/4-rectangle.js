@@ -6,6 +6,7 @@ class Rectangle {
       this.height = h;
     }
   }
+
   print () {
     for (let i = 0; i < this.height; i++) {
       let prX = '';
@@ -15,11 +16,13 @@ class Rectangle {
       console.log(prX);
     }
   }
+
   rotate () {
     const rot = this.width;
     this.width = this.height;
     this.height = rot;
   }
+
   double () {
     this.width *= 2;
     this.height *= 2;

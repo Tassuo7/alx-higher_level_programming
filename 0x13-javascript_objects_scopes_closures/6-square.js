@@ -10,7 +10,7 @@ class Square extends SprSquare {
       for (let j = 0; j < this.width; j++) {
         prC += c;
       }
-      console.log(s);
+      console.log(prC);
     }
   }
 }
