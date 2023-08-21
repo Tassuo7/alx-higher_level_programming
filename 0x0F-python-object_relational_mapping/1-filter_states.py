@@ -12,7 +12,7 @@ if __name__ == "__main__":
     cur.execute("""SELECT * FROM states WHERE name
                 LIKE BINARY 'N%' ORDER BY states.id""")
     states = cur.fetchall()
-    for stt in statees:
+    for stt in states:
         print(stt)
     cur.close()
     db.close()
