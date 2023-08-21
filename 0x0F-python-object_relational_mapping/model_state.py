@@ -10,8 +10,7 @@ Base = declarative_base()
 
 
 class State(Base):
-    """Class inherits from Base
-	links to the MySQL table states"""
+    """Class inherits from Base """
     __tablename__ = 'states'
     id = Column(Integer, unique=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
