@@ -1,20 +1,16 @@
 #!/usr/bin/node
 const request = require('request');
 const url = process.argv[2];
-
-request(url, function (err, response, body) {
-  if (err) {
-    console.log(err);
-  } else {
+request.get(url, function (err, response, body) {
+  if (err) console.log(error);
+  else if (response.statusCode === 200) {
     const done = {};
-    const tasks = JSON.parse(body);
-    for (const t in tasks) {
-      if (t.done) {
-        if (!done[t.userId]) {
-          done[t.userId] = 1;
-        } else {
-          done[t.userId]++;
-        }
+    for (let i = 0; i < JSON.parse(body).length; i++) {
+      const task = JSON.parse(body)[i];
+      if (task.userId in done && task.completed) {
+        done[task.userId] += 1;
+      } else if (!(task.userId in done) && task.completed) {
+        done[task.userId] = 1;
       }
     }
     console.log(done);
